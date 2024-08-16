@@ -3,6 +3,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, Grid, Paper, IconButton, Avatar, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const HomePage = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -56,7 +57,16 @@ const HomePage = () => {
         onClose={handleMenuClose}
       >
         <MenuItem>Profile</MenuItem>
-        <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+          <Link href="/sign-in" passHref>
+            Login
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+          <Link href="/sign-up" passHref>
+            SignUp
+          </Link>
+        </MenuItem>
       </Menu>
 
       <Grid container sx={{ overflow: 'hidden', bgcolor:'grey'}}>
