@@ -1,11 +1,12 @@
 'use client'
 
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, Grid, Paper, IconButton, Avatar, Menu, MenuItem } from '@mui/material';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, Button, Box, Grid, Paper, IconButton, Avatar, Menu, MenuItem, TextField } from '@mui/material';
+import getStripe from '../../utils/get-stripe';
 
 const MembershipPage = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [email, setEmail] = useState('');
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -18,6 +19,32 @@ const MembershipPage = () => {
   const isMenuOpen = Boolean(anchorEl);
 
   const menuId = 'profile-menu';
+
+  const handlePayment = async () => {
+    try {
+      const stripe = await getStripe();
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }), // Send the email with the request body
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const session = await response.json();
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+      if (result.error) {
+        console.error(result.error.message);
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+    }
+  };
 
   return (
     <>
@@ -78,7 +105,15 @@ const MembershipPage = () => {
             </Typography>
           </Paper>
           <Paper elevation={3} sx={{ p: 4, width: '80%', textAlign: 'center' }}>
-            <Button variant="contained" color="primary" fullWidth sx={{ bgcolor: '#FFCB05', color: '#00274C' }}>
+            <TextField 
+              label="Email"
+              variant="outlined"
+              fullWidth
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              sx={{ mb: 2 }}
+            />
+            <Button variant="contained" color="primary" fullWidth sx={{ bgcolor: '#FFCB05', color: '#00274C' }} onClick={handlePayment}>
               Pay Here
             </Button>
           </Paper>

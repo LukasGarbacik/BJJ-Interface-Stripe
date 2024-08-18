@@ -4,6 +4,7 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, Grid, Paper, IconButton, Avatar, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 import Link from 'next/link';
+import getStripe from '@/utils/get-stripe';
 
 const HomePage = () => {
   const [anchorEl, setAnchorEl] = useState(null);
