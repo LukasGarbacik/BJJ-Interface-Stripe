@@ -4,7 +4,7 @@ import { Container, AppBar, Toolbar, Typography, Button, Box } from '@mui/materi
 
 export default function SignInPagePage() {
     return (
-        <>
+        <Box sx={{ bgcolor:'grey', minHeight: '100vh' }}>
             <AppBar position="static" sx={{ bgcolor: '#00274C' }}>
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow: 1, color: '#FFCB05' }}>
@@ -27,6 +27,6 @@ export default function SignInPagePage() {
             <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ mt: 18 }}>
                 <SignIn routing="hash"/>
             </Box>
-        </>
+        </Box>
     );
 }

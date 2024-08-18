@@ -4,7 +4,7 @@ import { Container, AppBar, Toolbar, Typography, Button, Box } from '@mui/materi
 
 export default function SignUpPage() {
     return (
-        <>
+        <Box sx={{ bgcolor:'grey', minHeight: '100vh' }}>
             <AppBar position="static" sx={{ bgcolor: '#00274C' }}>
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow: 1, color: '#FFCB05' }}>
@@ -24,12 +24,9 @@ export default function SignUpPage() {
                     <UserButton />
                 </Toolbar>
             </AppBar>
-            <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ mt: 4}}>
-                <Typography variant="h4">
-                    Sign Up
-                </Typography>
+            <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" sx={{ mt: 14}}>
                 <SignUp routing="hash" />
             </Box>
-        </>
+        </Box>
     );
 }
