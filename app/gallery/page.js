@@ -59,7 +59,7 @@ const itemData = [
         <ImageList variant="masonry" cols={4} gap={8}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
-            <img
+            <Image
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}

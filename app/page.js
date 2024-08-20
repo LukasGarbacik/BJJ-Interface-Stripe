@@ -116,7 +116,7 @@ const HomePage = () => {
                   Club Summary
                 </Typography>
                 <Typography variant="body1">
-                  The Michigan Brazilian Jiu-Jitsu Club welcomes all Michigan students to join our inclusive community. Whether you're a seasoned practitioner or just starting out, our club is a space for everyone to learn, grow, and have fun. There's no pressure to attend every session—just drop by whenever you can!
+                  The Michigan Brazilian Jiu-Jitsu Club welcomes all Michigan students to join our inclusive community. Whether you&#39;re a seasoned practitioner or just starting out, our club is a space for everyone to learn, grow, and have fun. There&#39;s no pressure to attend every session—just drop by whenever you can!
                 </Typography>
               </Paper>
             </Grid>
@@ -127,7 +127,7 @@ const HomePage = () => {
                   Meeting Times
                 </Typography>
                 <Typography variant="body1">
-                  We meet every Monday and Wednesday for a 2-hour session from 6 PM to 8 PM. It's a perfect opportunity to sharpen your skills, learn new techniques, and roll with fellow BJJ enthusiasts.
+                  We meet every Monday and Wednesday for a 2-hour session from 6 PM to 8 PM. It&#39;s a perfect opportunity to sharpen your skills, learn new techniques, and roll with fellow BJJ enthusiasts.
                 </Typography>
               </Paper>
             </Grid>

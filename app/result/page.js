@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import {Typography, Box, Container, CircularProgress, Button, AppBar, Toolbar, Paper} from '@mui/material';
+import {Typography, Box, Container, CircularProgress, Button, AppBar, Toolbar, Paper, IconButton, Avatar} from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
