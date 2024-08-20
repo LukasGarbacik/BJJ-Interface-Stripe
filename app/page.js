@@ -57,7 +57,6 @@ const HomePage = () => {
         open={isMenuOpen}
         onClose={handleMenuClose}
       >
-        <MenuItem>Profile</MenuItem>
         <MenuItem onClick={handleMenuClose}>
           <Link href="/sign-in" passHref>
             Login

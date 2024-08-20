@@ -36,7 +36,7 @@ const itemData = [
     { img: '/images/p1.png', title: 'Photo 1' },
   ]
     const GalleryPage = () => {
-        return (
+    return (
             <>
       <AppBar position="static" sx={{ bgcolor: '#00274C' }}>
         <Toolbar>
