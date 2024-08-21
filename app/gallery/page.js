@@ -1,4 +1,4 @@
-
+import Image from 'next/image';
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Avatar, ImageList, ImageListItem} from '@mui/material';
 
