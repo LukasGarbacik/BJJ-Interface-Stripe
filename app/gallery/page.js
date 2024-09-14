@@ -56,19 +56,21 @@ const itemData = [
         </Toolbar>
       </AppBar>
       <div>
-        <ImageList variant="masonry" cols={4} gap={8}>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img}>
-            <Image
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
-              style={{ borderRadius: '8px' }}
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+        <ImageList variant="masonry" cols={4} gap={6} sx={{ margin: 0 }}>
+          {itemData.map((item) => (
+            <ImageListItem key={item.img}>
+              <Image
+                src={item.img}
+                alt={item.title}
+                width={200}   // Adjust this based on your layout needs
+                height={200}  // Maintain aspect ratio if needed
+                layout="responsive"  // Make the images responsive to the container
+                loading="lazy"
+                style={{ borderRadius: '8px' }}
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
       </div>
     </>
   );
